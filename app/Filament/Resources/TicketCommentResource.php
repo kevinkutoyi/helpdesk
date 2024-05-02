@@ -23,7 +23,15 @@ class TicketCommentResource extends Resource
     {
         return $form
             ->schema([
-                //
+                Forms\Components\Textarea::make('comment')
+                    ->required()
+                    ->columnSpanFull(),
+                Forms\Components\Select::make('user_id')
+                    ->relationship('user', 'name')
+                    ->required(),
+                Forms\Components\Select::make('ticket_id')
+                    ->relationship('ticket', 'id')
+                    ->required(),
             ]);
     }
 
@@ -31,7 +39,20 @@ class TicketCommentResource extends Resource
     {
         return $table
             ->columns([
-                //
+                Tables\Columns\TextColumn::make('user.name')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('ticket.id')
+                    ->numeric()
+                    ->sortable(),
+                Tables\Columns\TextColumn::make('created_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\TextColumn::make('updated_at')
+                    ->dateTime()
+                    ->sortable()
+                    ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
                 //
