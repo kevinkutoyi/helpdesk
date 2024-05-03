@@ -20,7 +20,8 @@ class Ticket extends Model
         'submitter_phone',
         'user_id',
         'school_id',
-        'category_id'
+        'category_id',
+        'submitter_admission_number'
     ];
 
     public function category(): BelongsTo

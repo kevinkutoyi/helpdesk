@@ -19,15 +19,28 @@
             <label for="subject">Subject:</label>
             <input type="text" class="form-control" id="subject" name="subject" required>
         </div>
+        <div class="form-group mb-3">
+            <label for="email">Email:</label>
+            <input type="text" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="phone">Phone:</label>
+            <input type="text" class="form-control" id="phone" name="phone" required>
+        </div>
+        <div class="form-group mb-3">
+            <label for="admission_number">Admission Number:</label>
+            <input type="text" class="form-control" id="admission_number" name="admission_number" required>
+        </div>
 
         <div class="form-group mb-3">
             <label for="description">Description:</label>
-            <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+            <textarea class="form-control" id="description" name="description" rows="2" required></textarea>
         </div>
 
         <div class="form-group mb-3">
             <label for="priority">Priority:</label>
             <select class="form-control" id="priority" name="priority" required>
+                <option selected disabled></option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
@@ -37,7 +50,7 @@
         <div class="form-group mb-3">
             <label for="school_id">School:</label>
             <select class="form-control" id="school_id" name="school_id">
-                <option value="">None</option>
+                <option value="" selected>None</option>
                 @foreach ($schools as $school)
                     <option value="{{ $school->id }}">{{ $school->name }}</option>
                 @endforeach

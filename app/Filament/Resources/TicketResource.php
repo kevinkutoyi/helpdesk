@@ -47,6 +47,8 @@ class TicketResource extends Resource
                     ->relationship('school', 'name'),
                 Forms\Components\Select::make('category_id')
                     ->relationship('category', 'name'),
+                Forms\Components\TextInput::make('submitter_admission_number')
+                    ->maxLength(255),
             ]);
     }
 
@@ -79,6 +81,8 @@ class TicketResource extends Resource
                 Tables\Columns\TextColumn::make('category.name')
                     ->numeric()
                     ->sortable(),
+                Tables\Columns\TextColumn::make('submitter_admission_number')
+                    ->searchable(),
             ])
             ->filters([
                 //
