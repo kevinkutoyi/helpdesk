@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreTicketRequest;
 use App\Models\School;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
@@ -16,8 +17,10 @@ class TicketController extends Controller
         return view('tickets.create', compact('schools'));
     }
 
-    public function store(Request $request)
+    public function store(StoreTicketRequest $request)
     {
+        $validated = $request->validated();
+        dd($validated);
 
     }
 }
