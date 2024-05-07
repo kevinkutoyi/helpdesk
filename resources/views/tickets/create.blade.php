@@ -17,7 +17,7 @@
 
         <div class="form-group mb-3">
             <label for="subject">Subject: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('subject') is-invalid @enderror" id="subject" name="subject" required>
+            <input type="text" class="form-control @error('subject') is-invalid @enderror" id="subject" name="subject"  value="{{old('subject')}}" required>
             @error('subject')
             <div class="alert alert-danger mt-1">{{ $message }}</div>
             @enderror
@@ -25,14 +25,14 @@
         <div class="row mb-3">
             <div class="col">
             <label for="submitter_email">Email: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('submitter_email') is-invalid @enderror" id="submitter_email" name="submitter_email" required>
+            <input type="text" class="form-control @error('submitter_email') is-invalid @enderror" id="submitter_email" name="submitter_email" value="{{old('submitter_email')}}" required>
                 @error('submitter_email')
                 <div class="alert alert-danger mt-1">{{ $message }}</div>
                 @enderror
         </div>
         <div class="col">
             <label for="submitter_phone">Phone: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('submitter_phone') is-invalid @enderror" id="submitter_phone" name="submitter_phone" required>
+            <input type="text" class="form-control @error('submitter_phone') is-invalid @enderror" id="submitter_phone" name="submitter_phone" value="{{old('submitter_phone')}}"  required>
             @error('submitter_phone')
             <div class="alert alert-danger mt-1">{{ $message }}</div>
             @enderror
@@ -40,8 +40,8 @@
         </div>
         <div class="form-group mb-3">
             <label for="admission_number">Admission Number: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('admission_number') is-invalid @enderror" id="admission_number" name="admission_number" required>
-            @error('admission_number')
+            <input type="text" class="form-control @error('submitter_admission_number') is-invalid @enderror" id="admission_number" name="submitter_admission_number" value="{{old('submitter_admission_number')}}" required>
+            @error('submitter_admission_number')
             <div class="alert alert-danger mt-1">{{ $message }}</div>
             @enderror
         </div>

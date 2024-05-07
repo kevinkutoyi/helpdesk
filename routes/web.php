@@ -20,3 +20,4 @@ Route::get('/', function () {
 
 Route::get('/tickets', [TicketController::class, 'create'])->name('tickets.create');
 Route::post('/tickets', [TicketController::class, 'store'])->name('tickets.store');
+Route::get('/ticket/{id}', [TicketController::class, 'show'])->name('tickets.show');
