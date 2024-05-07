@@ -40,8 +40,8 @@
         </div>
         <div class="form-group mb-3">
             <label for="admission_number">Admission Number: <span class="text-danger">*</span></label>
-            <input type="text" class="form-control @error('admission_number') is-invalid @enderror" id="admission_number" name="admission_number" value="{{old('admission_number')}}" required>
-            @error('admission_number')
+            <input type="text" class="form-control @error('submitter_admission_number') is-invalid @enderror" id="admission_number" name="submitter_admission_number" value="{{old('submitter_admission_number')}}" required>
+            @error('submitter_admission_number')
             <div class="alert alert-danger mt-1">{{ $message }}</div>
             @enderror
         </div>

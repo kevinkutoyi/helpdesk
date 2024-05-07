@@ -21,7 +21,8 @@ class Ticket extends Model
         'user_id',
         'school_id',
         'category_id',
-        'admission_number'
+        'submitter_admission_number',
+        'ticket_number'
     ];
 
     public function category(): BelongsTo
